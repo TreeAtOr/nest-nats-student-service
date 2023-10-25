@@ -2,7 +2,7 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 model Student {
-  persanal_code Int      @id @default(autoincrement())
+  personal_code Int      @id @default(autoincrement())
   first_name    String
   last_name     String
   Grades        Grade[]
@@ -13,7 +13,7 @@ model Grade {
   subject      String
   grade        Int
   student_code Int
-  student      Student  @relation(fields: [student_code], references: [persanal_code])
+  student      Student  @relation(fields: [student_code], references: [personal_code])
   date         DateTime @default(now())
 }
 
